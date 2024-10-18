@@ -3,53 +3,33 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-const AboutMe = () => {
-  return (
-    <div style={styles.container}>
-      <h1 style={styles.header}>About Me</h1>
-      <img
-        src="your-photo-url.jpg"
-        alt="Your Name"
-        style={styles.profileImage}
-      />
-      <p style={styles.description}>
-        Hello! My name is [Your Name]. I'm a [Your Profession/Passion] with a passion for [Your Interests]. 
-        I love working on projects related to [Your Skills/Work], and I enjoy [Hobbies]. I'm always excited 
-        to learn new things and challenge myself.
-      </p>
-      <div style={styles.contact}>
-        <h3>Contact Me</h3>
-        <p>Email: your-email@example.com</p>
-        <p>Phone: +123456789</p>
-      </div>
-    </div>
-  );
-};
+function App() {
+  const [count, setCount] = useState(0)
 
-const styles = {
-  container: {
-    fontFamily: 'Arial, sans-serif',
-    padding: '20px',
-    textAlign: 'center',
-  },
-  header: {
-    fontSize: '2em',
-    marginBottom: '20px',
-  },
-  profileImage: {
-    width: '150px',
-    height: '150px',
-    borderRadius: '50%',
-    marginBottom: '20px',
-  },
-  description: {
-    fontSize: '1.2em',
-    lineHeight: '1.6em',
-    margin: '0 20px 20px',
-  },
-  contact: {
-    marginTop: '20px',
-  },
-};
+  return (
+    <>
+      <div>
+        <a href="https://vitejs.dev" target="_blank">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+      </div>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.jsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+    </>
+  )
+}
 
 export default App
